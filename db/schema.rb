@@ -30,4 +30,22 @@ ActiveRecord::Schema.define(version: 20170322002020) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "professionals", force: :cascade do |t|
+    t.string   "name"
+    t.string   "speciality"
+    t.string   "document"
+    t.string   "adress"
+    t.string   "neighborhood"
+    t.string   "birthdate"
+    t.string   "sex"
+    t.string   "transport"
+    t.string   "perimeter"
+    t.text     "description"
+    t.string   "photo"
+    t.string   "phone"
+    t.string   "email"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
 end
