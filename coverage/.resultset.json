@@ -1,6 +1,19 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/campuscodemm4/workspace/peoplecare/app/models/professional.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/campuscodemm4/workspace/peoplecare/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/campuscodemm4/workspace/peoplecare/app/controllers/home_controller.rb": [
         1,
         null,
@@ -12,6 +25,38 @@
       "/Users/campuscodemm4/workspace/peoplecare/app/controllers/application_controller.rb": [
         1,
         1,
+        null
+      ],
+      "/Users/campuscodemm4/workspace/peoplecare/app/controllers/professionals_controller.rb": [
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        2,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/campuscodemm4/workspace/peoplecare/app/channels/application_cable/channel.rb": [
@@ -39,13 +84,8 @@
         0,
         0,
         0
-      ],
-      "/Users/campuscodemm4/workspace/peoplecare/app/models/application_record.rb": [
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1490057675
+    "timestamp": 1490144853
   }
 }
