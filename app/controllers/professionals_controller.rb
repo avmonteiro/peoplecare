@@ -23,7 +23,7 @@ private
 
   def professional_params
     params.require(:professional).permit(:name, :speciality, :document, :adress,
-                  :neighborhood, :birthdate, :sex, :transport, :perimeter, :description,
+                  :neighborhood, :birthdate, :genre, :transport, :perimeter, :description,
                   :photo, :phone, :email)
 
   end

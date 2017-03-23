@@ -1,8 +1,8 @@
 class Professional < ApplicationRecord
 
-validates :name, :speciality, :document, :birthdate, :sex, :transport,
+validates :name, :speciality, :document, :birthdate, :genre, :transport,
           :description, :phone, :email, presence: true
 
-scope :search, ->(query) { where("speciality like ?", "%#{query}%")} 
+scope :search, ->(query) { where("speciality like ?", "%#{query}%")}
 
 end

@@ -4,7 +4,7 @@ feature 'User create professional perfil' do
   scenario 'Successfully' do
     professional = Professional.new(name: 'José', speciality: 'nutricionista', document: '413.555.321.77',
                                     adress: 'Rua numero dois', neighborhood: 'Santa Cecília',
-                                    birthdate: '26/04/1992', sex: 'masculino', transport: 'carro',
+                                    birthdate: '26/04/1992', genre: 'masculino', transport: 'carro',
                                     perimeter: '8 km', description: 'Possuo CRM número 233-4343-232, tenho 9 anos de experiencia na área',
                                     photo: 'perfil.jpg', phone: '97475-3232', email: 'jose@hotmail.com')
 
@@ -18,7 +18,7 @@ feature 'User create professional perfil' do
     fill_in 'Endereço de atendimento', with: professional.adress
     fill_in 'Bairro', with: professional.neighborhood
     fill_in 'Data de Nascimento', with: professional.birthdate
-    fill_in 'Sexo', with: professional.sex
+    fill_in 'Sexo', with: professional.genre
     fill_in 'Meio de locomoção', with: professional.transport
     fill_in 'Perímetro de atendimento', with: professional.perimeter
     fill_in 'Descrição', with: professional.description
@@ -32,7 +32,7 @@ feature 'User create professional perfil' do
     expect(page).to have_content professional.speciality
     expect(page).to have_content professional.document
     expect(page).to have_content professional.birthdate
-    expect(page).to have_content professional.sex
+    expect(page).to have_content professional.genre
     expect(page).to have_content professional.transport
     expect(page).to have_content professional.description
     expect(page).to have_content professional.phone
