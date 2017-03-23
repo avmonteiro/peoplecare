@@ -9,6 +9,22 @@
   </head>
 
   <body>
+    <%= form_tag(root_path, action: "search", method: "get") do %>
+    <%= text_field_tag 'search', nil, placeholder: 'Ex: nutricionista...' %>
+    <%= submit_tag("Buscar") %>
+    <% end %>
+
+      <% if @search_professional.present? %>
+        <% @search_professional.each do |professional| %>
+        <%= professional.name %>
+        <%= professional.speciality %>
+        <%= professional.birthdate %>
+        <%= professional.transport %>
+        <%= professional.region %>
+
+        <% end %>
+      <% end %>
+
     <%= yield %>
   </body>
 </html>
