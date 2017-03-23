@@ -1,0 +1,21 @@
+<%= flash[:notice] %>
+<%= simple_form_for @patient do |f| %>
+  <%= f.input :name, label: 'Nome Completo' %>
+  <%= f.input :photo, label: 'Foto' %>
+  <%= f.input :address, label: 'Endereco' %>
+
+  <%= f.input :neighborhood, label: 'Bairro' %>
+  <%= f.input :birthdate, label: 'Data de Nascimento' %>
+  <%= f.input :genre, label: 'Sexo' %>
+
+  <%= f.input :phone, label: 'Telefone' %>
+  <%= f.input :email, label: 'E-mail' %>
+  <%= f.input :looking_for, label: 'O que procuro?' %>
+  <%= f.input :document, label: 'Documento' %>
+
+  <%= f.input :profession, label: 'Profissao' %>
+  <%= f.input :talk_to, label: 'Falar com' %>
+  <%= f.input :phone_contact, label: 'Telefone do Contato' %>
+
+  <%= f.submit 'Cadastrar Paciente' %>
+<% end %>

@@ -12,6 +12,24 @@
 
 ActiveRecord::Schema.define(version: 20170322233624) do
 
+  create_table "patients", force: :cascade do |t|
+    t.string   "photo"
+    t.string   "name"
+    t.string   "address"
+    t.string   "neighborhood"
+    t.string   "birthdate"
+    t.string   "genre"
+    t.string   "phone"
+    t.string   "email"
+    t.string   "looking_for"
+    t.string   "document"
+    t.string   "profession"
+    t.string   "talk_to"
+    t.string   "phone_contact"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "professionals", force: :cascade do |t|
     t.string   "name"
     t.string   "speciality"
