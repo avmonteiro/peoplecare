@@ -1,0 +1,9 @@
+<%= flash[:notice] %>
+
+<%= simple_form_for @professional do |f| %>
+
+  <%= f.input :email, label: 'Email' %>
+  <%= f.input :password, label: 'Senha' %>
+
+  <%= f.button :submit, 'Cadastrar' %>
+<% end %>

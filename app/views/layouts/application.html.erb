@@ -14,6 +14,10 @@
     <%= submit_tag("Buscar") %>
     <% end %>
 
+      <% if professional_signed_in? %>
+        Olá <%= current_professional.email %>
+      <% end %>
+
       <% if @search_professional.present? %>
         <% @search_professional.each do |professional| %>
         <%= professional.name %>

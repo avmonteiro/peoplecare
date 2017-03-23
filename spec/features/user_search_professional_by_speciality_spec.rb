@@ -7,7 +7,7 @@ feature 'User search professional by speciality' do
                                     birthdate: '26/04/1992', sex: 'masculino', transport: 'carro',
                                     perimeter: '8 km', description: 'Possuo CRM número 233-4343-232, tenho 9 anos de experiencia na área',
                                     photo: 'perfil.jpg', phone: '97475-3232', email: 'jose@hotmail.com',
-                                    region: 'zona norte')
+                                    region: 'zona norte', password: 'bahtata')
 
     visit root_path
 

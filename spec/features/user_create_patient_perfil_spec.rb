@@ -3,22 +3,15 @@ require 'rails_helper'
 feature 'user create perfil' do
   scenario 'successfully' do
 #setup
-    patient = Patient.new(
-                            photo: 'fotojpeg',
-                            name: 'Renan Guirado',
-                            address: 'rua x apto 3, numero 300',
-                            neighborhood: 'Ipiranga',
-                            birthdate: '04/01/2001',
-                            genre: 'Masculino',
-                            phone: '988759274',
-                            email: 'zezinho@email.com',
+    patient = Patient.new(photo: 'fotojpeg', name: 'Renan Guirado',
+                          address: 'rua x apto 3, numero 300', neighborhood: 'Ipiranga',
+                            birthdate: '04/01/2001', genre: 'Masculino',
+                            phone: '988759274', email: 'zezinho@email.com',
                             looking_for: 'fisioterapeuta especializado em choques faciais',
-                            document: '07583849-0',
-                            profession: 'fisioterapeuta',
-                            talk_to: 'Maria',
-                            phone_contact: '977639621'
-        )
-        visit new_patient_path
+                            document: '07583849-0', profession: 'fisioterapeuta',
+                            talk_to: 'Maria', phone_contact: '977639621')
+
+    visit new_patient_path
 #execucao
     fill_in "Nome Completo",          with: patient.name
     fill_in "Foto",                   with: patient.photo
