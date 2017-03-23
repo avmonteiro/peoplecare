@@ -12,6 +12,8 @@ feature 'User create professional perfil' do
 
     click_on 'Sou profissional de saúde'
 
+    #click_on 'Ainda não estou cadastrado'
+
     fill_in 'Nome', with: professional.name
     fill_in 'Especialidade', with: professional.speciality
     fill_in 'CPF', with: professional.document
