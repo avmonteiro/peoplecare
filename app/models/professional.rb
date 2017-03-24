@@ -4,10 +4,10 @@ class Professional < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :name, :speciality, :document, :birthdate, :sex, :transport,
+  validates :name, :speciality, :document, :birthdate, :genre, :transport,
             :description, :phone, :email, :password, presence: true
 
-
   scope :search, ->(query) { where("speciality like ? or region like ?", "%#{query}%", "%#{query}%")}
+
 
 end
