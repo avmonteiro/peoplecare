@@ -1,0 +1,30 @@
+<h2>Sign up</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, label: 'Nome' %>
+    <%= f.input :speciality, label: 'Especialidade' %>
+    <%= f.input :document, label: 'CPF' %>
+    <%= f.input :address, label: 'Endereço de atendimento' %>
+    <%= f.input :neighborhood, label: 'Bairro' %>
+    <%= f.input :birthdate, label: 'Data de Nascimento' %>
+    <%= f.input :genre, label: 'Sexo' %>
+    <%= f.input :transport, label: 'Meio de locomoção' %>
+    <%= f.input :perimeter, label: 'Perímetro de atendimento' %>
+    <%= f.input :description, label: 'Descrição' %>
+    <%= f.input :photo, label: 'Foto' %>
+    <%= f.input :phone, label: 'Telefone' %>
+    <h3>Email e Senha</h3>
+    <%= f.input :email, required: true %>
+    <%= f.input :password, label: 'Senha', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, label: 'Confirmação de Senha', required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Cadastrar" %>
+  </div>
+<% end %>
+
+<%= render "professionals/shared/links" %>

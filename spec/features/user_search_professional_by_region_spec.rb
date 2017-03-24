@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User search professional by speciality' do
+feature 'User search professional by region' do
   scenario 'Successfully' do
     professional = Professional.create(name: 'José', speciality: 'nutricionista', document: '413.555.321.77',
                                     address: 'Rua numero dois', neighborhood: 'Santa Cecília',
@@ -11,7 +11,7 @@ feature 'User search professional by speciality' do
 
     visit root_path
 
-    fill_in 'search', with: professional.speciality
+    fill_in 'search', with: professional.region
 
     click_on 'Buscar'
 

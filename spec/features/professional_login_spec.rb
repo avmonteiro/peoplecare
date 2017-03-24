@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User search professional by speciality' do
+feature 'User sign in' do
   scenario 'Successfully' do
     professional = Professional.create(name: 'José', speciality: 'nutricionista', document: '413.555.321.77',
                                     address: 'Rua numero dois', neighborhood: 'Santa Cecília',
@@ -9,17 +9,17 @@ feature 'User search professional by speciality' do
                                     photo: 'perfil.jpg', phone: '97475-3232', email: 'jose@hotmail.com',
                                     region: 'zona norte', password: 'bahtata')
 
-    visit root_path
+  visit root_path
 
-    fill_in 'search', with: professional.speciality
+  click_on 'Sou profissional de saúde'
 
-    click_on 'Buscar'
+  fill_in 'Email', with: professional.email
+  fill_in 'Senha', with: professional.password
 
-    expect(page).to have_content professional.name
-    expect(page).to have_content professional.speciality
-    expect(page).to have_content professional.birthdate
-    expect(page).to have_content professional.transport
-    expect(page).to have_content professional.region
+  click_on 'Entrar'
+
+  expect(current_path).to eq(root_path)
+  expect(page).to have_content("Olá #{professional.email}")
 
   end
 end

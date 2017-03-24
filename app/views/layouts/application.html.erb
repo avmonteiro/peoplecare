@@ -14,13 +14,17 @@
     <%= submit_tag("Buscar") %>
     <% end %>
 
+      <% if professional_signed_in? %>
+        Olá <%= current_professional.email %>
+      <% end %>
+
       <% if @search_professional.present? %>
         <% @search_professional.each do |professional| %>
-        <%= professional.name %>
-        <%= professional.speciality %>
-        <%= professional.birthdate %>
-        <%= professional.transport %>
-        <%= professional.region %>
+          <%= link_to professional.name, professional_path(professional) %>
+          <%= professional.speciality %>
+          <%= professional.birthdate %>
+          <%= professional.transport %>
+          <%= professional.region %>
 
         <% end %>
       <% end %>
