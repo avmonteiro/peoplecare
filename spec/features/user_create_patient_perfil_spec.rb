@@ -9,7 +9,7 @@ feature 'user create perfil' do
                             phone: '988759274', email: 'zezinho@email.com',
                             looking_for: 'fisioterapeuta especializado em choques faciais',
                             document: '07583849-0', profession: 'fisioterapeuta',
-                            talk_to: 'Maria', phone_contact: '977639621')
+                            talk_to: 'Maria', phone_contact: '977639621', region: 'zona norte')
 
     visit new_patient_path
 #execucao
@@ -17,6 +17,7 @@ feature 'user create perfil' do
     fill_in "Foto",                   with: patient.photo
     fill_in "Endereco",               with: patient.address
     fill_in "Bairro",                 with: patient.neighborhood
+    fill_in "Região",                 with: patient.region
     fill_in "Data de Nascimento",     with: patient.birthdate
     fill_in "Sexo",                   with: patient.genre
     fill_in "patient_phone",          with: patient.phone
@@ -27,12 +28,14 @@ feature 'user create perfil' do
     fill_in "Falar com",              with: patient.talk_to
     fill_in "Telefone do Contato",    with: patient.phone_contact
 
+
     click_on 'Cadastrar Paciente'
 #expect
     expect(page).to have_content patient.name
     expect(page).to have_content patient.photo
     expect(page).to have_content patient.address
     expect(page).to have_content patient.neighborhood
+    expect(page).to have_content patient.region
     expect(page).to have_content patient.birthdate
     expect(page).to have_content patient.genre
     expect(page).to have_content patient.phone
