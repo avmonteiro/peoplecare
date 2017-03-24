@@ -32,8 +32,8 @@ feature 'User create professional perfil' do
 
     click_on 'Cadastrar'
 
-
-    expect(page).to have_content professional.email
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Olá #{professional.email}")
 
   end
   scenario 'Should fill all fields' do

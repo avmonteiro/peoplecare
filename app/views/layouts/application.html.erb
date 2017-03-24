@@ -16,11 +16,12 @@
 
       <% if professional_signed_in? %>
         Olá <%= current_professional.email %>
+        <%= link_to('Logout', destroy_professional_session_path, :method => :delete) %>    
       <% end %>
 
       <% if @search_professional.present? %>
         <% @search_professional.each do |professional| %>
-        <%= professional.name %>
+        <%= link_to professional.name, professional_path(professional) %>
         <%= professional.speciality %>
         <%= professional.birthdate %>
         <%= professional.transport %>
