@@ -1,8 +1,10 @@
 <% @patients.each do |patient| %>
 
-<%= patient.name %>
-<%= patient.address %>
-<%= patient.region %>
-<%= patient.email %>
+<dt>
+  <dl><%= patient.name %></dl>
+  <dd><%= patient.address %></dd>
+  <dd><%= patient.region %></dd>
+  <dd><%= patient.email %></dd>
+</dt>
 
 <% end %>

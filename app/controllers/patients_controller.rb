@@ -7,7 +7,7 @@ class PatientsController < ApplicationController
   end
 
   def nearby
-    @patients = Patient.where(region: current_professional.region)
+    @patients = Patient.where("region = ? AND looking_for = ?", current_professional.region, current_professional.speciality)
   end
 
 end
