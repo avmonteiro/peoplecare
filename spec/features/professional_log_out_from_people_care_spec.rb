@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User sign in' do
+feature 'Professional logout from social recipes' do
   scenario 'Successfully' do
     professional = Professional.create(name: 'José', speciality: 'nutricionista', document: '413.555.321.77',
                                     address: 'Rua numero dois', neighborhood: 'Santa Cecília',
@@ -21,24 +21,9 @@ feature 'User sign in' do
   expect(current_path).to eq(root_path)
   expect(page).to have_content("Olá #{professional.email}")
 
-  end
+  click_on 'Logout'
 
-  scenario 'Professional insert invalid data' do
-    professional = Professional.create(name: 'José', speciality: 'nutricionista', document: '413.555.321.77',
-                                    address: 'Rua numero dois', neighborhood: 'Santa Cecília',
-                                    birthdate: '26/04/1992', genre: 'masculino', transport: 'carro',
-                                    perimeter: '8 km', description: 'Possuo CRM número 233-4343-232, tenho 9 anos de experiencia na área',
-                                    photo: 'perfil.jpg', phone: '97475-3232', email: 'jose@hotmail.com',
-                                    region: 'zona norte', password: 'bahtata')
-
-  visit root_path
-
-  click_on 'Sou profissional de saúde'
-
-  click_on 'Entrar'
-
-  #expect(page).to have_content("Dados inválidos")
+  expect(page).not_to have_content("Olá #{professional.email}")
 
   end
-
 end
