@@ -10,5 +10,11 @@ class ApplicationController < ActionController::Base
                      :neighborhood, :region, :birthdate, :genre, :transport, :perimeter, :description,
                      :photo, :phone])
      end
+
+     if resource_class == Patient
+       devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :photo, :address, :neighborhood,
+                     :birthdate, :genre, :phone, :email, :looking_for, :document,
+                     :profession, :talk_to, :phone_contact])
+     end
    end
 end
