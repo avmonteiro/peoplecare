@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
      if resource_class == Patient
        devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :photo, :address, :neighborhood,
                      :birthdate, :genre, :phone, :email, :looking_for, :document,
-                     :profession, :talk_to, :phone_contact])
+                     :profession, :talk_to, :phone_contact, :region])
      end
    end
 end
