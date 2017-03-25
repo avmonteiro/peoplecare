@@ -18,6 +18,11 @@
         Olá <%= current_professional.email %>
       <% end %>
 
+      <% if patient_signed_in? %>
+        Olá <%= current_patient.email %>
+        <%= link_to('Logout', destroy_patient_session_path, :method => :delete) %>
+      <% end %>
+
       <% if @search_professional.present? %>
         <% @search_professional.each do |professional| %>
           <%= link_to professional.name, professional_path(professional) %>
