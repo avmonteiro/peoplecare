@@ -9,7 +9,7 @@ feature 'Professional search for patients by region' do
                                     photo: 'perfil.jpg', phone: '97475-3232', email: 'jose@hotmail.com',
                                     region: 'zona norte', password: 'bahtata')
 
-    patient = Patient.create!(photo: 'fotojpeg', name: 'Renan Guirado',
+    patient = Patient.create(photo: 'fotojpeg', name: 'Renan Guirado',
                             address: 'rua x apto 3, numero 300', neighborhood: 'Ipiranga',
                             birthdate: '04/01/2001', genre: 'Masculino',
                             phone: '988759274', email: 'zezinho@email.com',
@@ -22,7 +22,7 @@ feature 'Professional search for patients by region' do
                             birthdate: '04/01/2001', genre: 'Feminino',
                             phone: '988759274', email: 'mariana@email.com',
                             looking_for: 'fisioterapeuta especializado em choques faciais',
-                            document: '07583849-0', profession: 'desenvolvedora', password: '123456'
+                            document: '07583849-0', profession: 'desenvolvedora', password: '123456',
                             talk_to: 'Maria', phone_contact: '977639621', region: 'zona sul')
   visit root_path
 
