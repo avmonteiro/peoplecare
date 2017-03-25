@@ -6,7 +6,7 @@ feature 'User create professional perfil' do
                                     address: 'Rua numero dois', neighborhood: 'Santa Cecília',
                                     birthdate: '26/04/1992', genre: 'masculino', transport: 'carro',
                                     perimeter: '8 km', description: 'Possuo CRM número 233-4343-232, tenho 9 anos de experiencia na área',
-                                    photo: 'perfil.jpg', phone: '97475-3232', email: 'jose@hotmail.com', password: 'bahtata')
+                                    photo: 'perfil.jpg', phone: '97475-3232', email: 'jose@hotmail.com', password: 'bahtata', region: 'zona norte')
 
     visit root_path
 
@@ -19,6 +19,7 @@ feature 'User create professional perfil' do
     fill_in 'CPF', with: professional.document
     fill_in 'Endereço de atendimento', with: professional.address
     fill_in 'Bairro', with: professional.neighborhood
+    fill_in 'Região', with: professional.region
     fill_in 'Data de Nascimento', with: professional.birthdate
     fill_in 'Sexo', with: professional.genre
     fill_in 'Meio de locomoção', with: professional.transport

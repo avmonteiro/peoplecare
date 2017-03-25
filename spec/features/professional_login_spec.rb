@@ -37,7 +37,7 @@ feature 'User sign in' do
 
   click_on 'Entrar'
 
-  #expect(page).to have_content("Dados inválidos")
+  #expect(page).to have_content("não pode ficar em branco")
 
   end
 

@@ -17,8 +17,7 @@
       <% if professional_signed_in? %>
         Olá <%= current_professional.email %>
         <%= link_to('Logout', destroy_professional_session_path, :method => :delete) %>
-        <% @patients.each do |patient| %>
-        <%= link_to 'Pacientes Próximos', patient_path(where current_professional.region == patient.region)
+        <%= link_to 'Pacientes Próximos', nearby_patients_path %>
       <% end %>
 
       <% if @search_professional.present? %>

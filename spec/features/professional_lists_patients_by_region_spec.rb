@@ -17,10 +17,10 @@ feature 'Professional search for patients by region' do
                             document: '07583849-0', profession: 'advogado',
                             talk_to: 'Maria', phone_contact: '977639621', region: 'zona norte')
 
-    otherPatient = Patient.create(photo: 'fotojpeg', name: 'Mariana',
-                          address: 'rua x apto 3, numero 300', neighborhood: 'Ipiranga',
+    other_patient = Patient.create(photo: 'fotojpeg', name: 'Mariana',
+                          address: 'faasdsadadd', neighborhood: 'Ipiranga',
                             birthdate: '04/01/2001', genre: 'Feminino',
-                            phone: '988759274', email: 'zezinho@email.com',
+                            phone: '988759274', email: 'mariana@email.com',
                             looking_for: 'fisioterapeuta especializado em choques faciais',
                             document: '07583849-0', profession: 'desenvolvedora',
                             talk_to: 'Maria', phone_contact: '977639621', region: 'zona sul')
@@ -33,9 +33,6 @@ feature 'Professional search for patients by region' do
 
   click_on 'Entrar'
 
-  expect(current_path).to eq(root_path)
-  expect(page).to have_content("Olá #{professional.email}")
-
   click_on 'Pacientes Próximos'
 
   expect(page).to have_content patient.name
@@ -43,10 +40,10 @@ feature 'Professional search for patients by region' do
   expect(page).to have_content patient.region
   expect(page).to have_content patient.email
 
-  expect(page).not_to have_content otherPatient.name
-  expect(page).not_to have_content otherPatient.address
-  expect(page).not_to have_content otherPatient.region
-  expect(page).not_to have_content otherPatient.email
+  expect(page).not_to have_content other_patient.name
+  expect(page).not_to have_content other_patient.address
+  expect(page).not_to have_content other_patient.region
+  expect(page).not_to have_content other_patient.email
 
   end
 end

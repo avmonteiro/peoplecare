@@ -1,9 +1,11 @@
 <h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
   <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, label: 'Senha', required: false %>
+    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :password, label: 'Senha', required: true %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
@@ -11,7 +13,5 @@
     <%= f.button :submit, "Entrar" %>
   </div>
 <% end %>
-
-<%= link_to 'Ainda não possuo cadastro', new_professional_registration_path %>
 
 <%= render "professionals/shared/links" %>
