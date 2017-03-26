@@ -1,0 +1,9 @@
+<h1>Entre em contato com o paciente</h1>
+
+<%= simple_form_for @contact do |f| %>
+  <%= f.input :name, label: 'Nome'%>
+  <%= f.input :email%>
+  <%= f.input :message, label: 'Mensagem' %>
+
+  <%= f.submit 'Enviar mensagem' %>
+<% end %>
