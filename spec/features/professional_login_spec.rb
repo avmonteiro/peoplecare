@@ -21,6 +21,7 @@ feature 'User sign in' do
   expect(current_path).to eq(root_path)
   expect(page).to have_content("Olá #{professional.email}")
 
+
   end
 
   scenario 'Professional insert invalid data' do

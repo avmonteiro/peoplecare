@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Professional search for patients by medical treatment and region' do
   scenario 'Successfully' do
-    professional = Professional.create(name: 'José', speciality: 'fisioterapeuta especializado em choques faciais', document: '413.555.321.77',
+    professional = Professional.create(name: 'José', speciality: 'fisioterapeuta', document: '413.555.321.77',
                                     address: 'Rua numero dois', neighborhood: 'Santa Cecília',
                                     birthdate: '26/04/1992', genre: 'masculino', transport: 'carro',
                                     perimeter: '8 km', description: 'Possuo CRM número 233-4343-232, tenho 9 anos de experiencia na área',
@@ -13,7 +13,7 @@ feature 'Professional search for patients by medical treatment and region' do
                             address: 'rua x apto 3, numero 300', neighborhood: 'Ipiranga',
                             birthdate: '04/01/2001', genre: 'Masculino',
                             phone: '988759274', email: 'zezinho@email.com',
-                            looking_for: 'fisioterapeuta especializado em choques faciais',
+                            looking_for: 'fisioterapeuta',
                             document: '07583849-0', profession: 'advogado', password: '123456',
                             talk_to: 'Maria', phone_contact: '977639621', region: 'zona norte')
 
@@ -21,7 +21,7 @@ feature 'Professional search for patients by medical treatment and region' do
                             address: 'faasdsadadd', neighborhood: 'Ipiranga',
                             birthdate: '04/01/2001', genre: 'Feminino',
                             phone: '988759274', email: 'mariana@email.com',
-                            looking_for: 'fisioterapeuta especializado em choques faciais',
+                            looking_for: 'fisioterapeuta',
                             document: '07583849-0', profession: 'desenvolvedora', password: '123456',
                             talk_to: 'Maria', phone_contact: '977639621', region: 'zona norte')
 
