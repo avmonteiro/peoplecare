@@ -1,31 +1,203 @@
-<h2>Sign up</h2>
+<!--<h2>Sign up</h2>-->
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name, label: 'Nome' %>
-    <%= f.input :speciality, label: 'Especialidade' %>
-    <%= f.input :document, label: 'CPF' %>
-    <%= f.input :address, label: 'Endereço de atendimento' %>
-    <%= f.input :neighborhood, label: 'Bairro' %>
-    <%= f.input :region, label: 'Região' %>
-    <%= f.input :birthdate, label: 'Data de Nascimento' %>
-    <%= f.input :genre, label: 'Sexo' %>
-    <%= f.input :transport, label: 'Meio de locomoção' %>
-    <%= f.input :perimeter, label: 'Perímetro de atendimento' %>
-    <%= f.input :description, label: 'Descrição' %>
-    <%= f.input :photo, label: 'Foto' %>
-    <%= f.input :phone, label: 'Telefone' %>
-    <h3>Email e Senha</h3>
-    <%= f.input :email, required: true %>
-    <%= f.input :password, label: 'Senha', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, label: 'Confirmação de Senha', required: true %>
-  </div>
+<!--  <div class="form-inputs">
+<%= f.input :name, label: 'Nome' %>
+<%= f.input :speciality, label: 'Especialidade' %>
+<%= f.input :document, label: 'CPF' %>
+<%= f.input :address, label: 'Endereço de atendimento' %>
+<%= f.input :neighborhood, label: 'Bairro' %>
+<%= f.input :region, label: 'Região' %>
+<%= f.input :birthdate, label: 'Data de Nascimento' %>
+<%= f.input :genre, label: 'Sexo' %>
+<%= f.input :transport, label: 'Meio de locomoção' %>
+<%= f.input :perimeter, label: 'Perímetro de atendimento' %>
+<%= f.input :description, label: 'Descrição' %>
+<%= f.input :photo, label: 'Foto' %>
+<%= f.input :phone, label: 'Telefone' %>
+<h3>Email e Senha</h3>
+<%= f.input :email, required: true %>
+<%= f.input :password, label: 'Senha', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+<%= f.input :password_confirmation, label: 'Confirmação de Senha', required: true %>
+</div>
+<div class="form-actions">
+<%= f.button :submit, "Cadastrar" %>
+</div>
+<%= render "professionals/shared/links" %>-->
+<!DOCTYPE html>
+<html>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Cadastrar" %>
-  </div>
+<head>
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <title>AdminDesigns - A Responsive HTML5 Admin UI Framework</title>
+  <meta name="keywords" content="HTML5 Bootstrap 3 Admin Template UI Theme" />
+  <meta name="description" content="AdminDesigns - A Responsive HTML5 Admin UI Framework">
+  <meta name="author" content="AdminDesigns">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font CSS (Via CDN) -->
+  <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
+
+  <!-- Admin Forms CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.css">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/favicon.ico">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="external-page external-alt sb-l-c sb-r-c">
+
+  <!-- Start: Main -->
+  <div id="main" class="animated fadeIn">
+
+    <!-- Start: Content-Wrapper -->
+    <section id="content_wrapper">
+
+      <!-- Begin: Content -->
+      <section id="content">
+
+
+        <div class="admin-form theme-primary mw600" style="margin-top: 3%;" id="register">
+
+          <!-- Registration Logo -->
+          <div class="row table-layout">
+            <h2>Cadastro de Profissionais</h2>
+
+          </div>
+
+          <!-- Registration Panel/Form -->
+          <div class="panel mt40">
+
+            <form>
+              <div class="form-inputs panel-body bg-light p25 pb15">
+
+                <div class="section row">
+                  <div class="col-md-6">
+                    <%= f.input :name, label: 'Nome', placeholder:'Inserir Nome...'%>
+                  </div>
+
+                  <div class="col-md-6">
+                    <%= f.input :document, label: 'CPF', placeholder:'Inserir CPF...' %>
+                  </div>
+                </div>
+
+                <div class="section row">
+                  <div class="col-md-6">
+                    <%= f.input :speciality, label: 'Especialidade', placeholder: 'Especialidade' %>
+                  </div>
+
+                  <div class="col-md-6">
+                    <%= f.input :address, label: 'Endereço de atendimento', placeholder:'Endereço de atendimento' %>
+                  </div>
+                </div>
+                <!-- end section -->
+                <div class="section row">
+                  <div class="col-md-6">
+                    <%= f.input :neighborhood, label: 'Bairro', placeholder:'Bairro' %>
+                  </div>
+
+                  <div class="col-md-6">
+                    <%= f.input :region, label: 'Região',placeholder:'Região' %>
+                  </div>
+                </div>
+                <!-- end section -->
+                <div class="section row">
+                  <div class="col-md-6">
+                    <%= f.input :birthdate, label: 'Data de Nascimento', placeholder:'Data de Nascimento' %>
+                  </div>
+
+                  <div class="col-md-6">
+                    <%= f.input :genre, label: 'Sexo', placeholder:'Sexo'%>
+                  </div>
+                </div>
+                <!-- end section -->
+                <div class="section row">
+                  <div class="col-md-6">
+                    <%= f.input :transport, label: 'Meio de locomoção', placeholder:'Meio de locomoção' %>
+                  </div>
+
+                  <div class="col-md-6">
+                    <%= f.input :perimeter, label: 'Perímetro de atendimento', placeholder:'Perímetro de atendimento' %>
+                  </div>
+                </div>
+                <!-- end section -->
+
+
+                <div class="section row">
+
+                  <div class="col-md-6">
+                    <%= f.input :phone, label: 'Telefone', placeholder:'Telefone' %>
+                  </div>
+
+
+                  <div class="col-md-6">
+                    <%= f.input :photo, label: 'Foto', placeholder: 'Foto' %>
+                  </div>
+                </div>
+                <!-- end section -->
+                <div class="section row">
+                  <%= f.input :description, label: 'Descrição', placeholder:'Descrição' %>
+                </div>
+                <!--  Divider -->
+                <hr class="alt mt40 mb30 mh70">
+
+                <div class="section row">
+
+                  <div class="col-md-4">
+                    <%= f.input :email, required: true %>
+                  </div>
+
+                  <div class="col-md-4 ">
+                    <%= f.input :password, label: 'Senha', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+                  </div>
+
+                  <div class="col-md-4">
+                    <%= f.input :password_confirmation, label: 'Confirmação de Senha', required: true %>
+                  </div>
+
+                </div>
+
+              </div>
+              <!-- end section -->
+
+            </div>
+
+            <div class="panel-footer clearfix form-actions">
+              <!--<button type="submit" class="button btn-primary mr10 pull-right">Register</button>-->
+              <%= f.button :submit, "Cadastrar" %>
+
+              <%= render "professionals/shared/links" %>
+
+            </div>
+
+          </form>
+        </div>
+
+
+      </div>
+
+    </section>
+    <!-- End: Content -->
+
+  </section>
+  <!-- End: Content-Wrapper -->
+
+</div>
+<!-- End: Main -->
+
+</body>
+
+</html>
 <% end %>
-
-<%= render "professionals/shared/links" %>

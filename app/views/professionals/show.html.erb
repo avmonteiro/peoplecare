@@ -1,4 +1,4 @@
-<dt>
+<!--<dt>
   <dl><%= @professional.name %></dl>
   <dl><%= @professional.address %></dl>
   <dl><%= @professional.neighborhood %></dl>
@@ -11,4 +11,90 @@
   <dl><%= @professional.phone %></dl>
   <dl><%= @professional.email %></dl>
   <dl><%= @professional.region %></dl>
-</dt>
+</dt>-->
+
+
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Nome</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @professional.name %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Endereco</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @professional.address %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Bairro</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @professional.neighborhood %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Especialista</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @professional.speciality %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Data de Nascimento</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @professional.birthdate %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Genero</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @professional.genre %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Meio de Locomocao</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @professional.transport %></p>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Perimetro de distancia</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @professional.perimeter %></p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Descricao</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @professional.description %></p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Telefone</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @professional.phone %></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <p class="form-control-static"><%= @professional.email %></p>
+    </div>
+  </div>  <div class="form-group">
+      <label class="col-sm-2 control-label">Telefone</label>
+      <div class="col-sm-10">
+        <p class="form-control-static"><%= @professional.phone %></p>
+      </div>
+    </div>  <div class="form-group">
+        <label class="col-sm-2 control-label">Regiao</label>
+        <div class="col-sm-10">
+          <p class="form-control-static"><%= @professional.region %></p>
+        </div>
+      </div>
+
+</form>
