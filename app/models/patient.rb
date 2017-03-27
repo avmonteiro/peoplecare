@@ -7,4 +7,6 @@ class Patient < ApplicationRecord
   validates :photo, :name, :genre, :birthdate, :address, :email, :password, :region,
   :phone, :looking_for, :talk_to, :phone_contact, :region,  presence: true
 
+  has_many :emails
+
 end

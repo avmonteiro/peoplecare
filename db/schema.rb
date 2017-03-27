@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324213614) do
+ActiveRecord::Schema.define(version: 20170327134110) do
+
+  create_table "emails", force: :cascade do |t|
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "professional_id"
+    t.integer  "patient_id"
+    t.text     "description"
+    t.index ["patient_id"], name: "index_emails_on_patient_id"
+    t.index ["professional_id"], name: "index_emails_on_professional_id"
+  end
 
   create_table "patients", force: :cascade do |t|
     t.string   "photo"
@@ -57,7 +67,6 @@ ActiveRecord::Schema.define(version: 20170324213614) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "region"
-    t.string   "genre"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -67,6 +76,7 @@ ActiveRecord::Schema.define(version: 20170324213614) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "genre"
     t.string   "address"
     t.index ["email"], name: "index_professionals_on_email", unique: true
     t.index ["reset_password_token"], name: "index_professionals_on_reset_password_token", unique: true

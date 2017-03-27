@@ -11,4 +11,11 @@ Rails.application.routes.draw do
   end
 
   resources :professionals, only: [:show]
+
+  resources :emails, only:[:new, :create, :update, :show] do
+    collection do
+      get 'prof_email'
+    end
+  end
+
 end

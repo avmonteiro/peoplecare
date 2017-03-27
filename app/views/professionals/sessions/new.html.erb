@@ -15,8 +15,7 @@
 <% end %>
 
 <%= render "professionals/shared/links" %>-->
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<%= f.error_notification %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +51,8 @@
           </div>
           <!-- Login Panel/Form -->
           <div class="panel mt30 mb25">
-            <form>
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
               <div class="panel-body bg-light p25 pb15">
                 <!-- Social Login Buttons -->
                 <div class="section row">
@@ -125,7 +125,7 @@
                 <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
               </div>
             </div>
-          </form>
+        <% end %>
         </div>
         <!-- Registration Links -->
         <div class="login-links">
@@ -137,4 +137,3 @@
 </div>
 </body>
 </html>
-<% end %>
