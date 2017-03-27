@@ -5,9 +5,9 @@ class ProfessionalMailer < ApplicationMailer
   #
   #   en.professional_mailer.new_professional_contact.subject
   #
-  def new_professional_contact(patient)
-    @patient = patient
+  def new_professional_contact(email)
+    @email = email
 
-    mail(to: @patient.email, subject: "oi")
+    mail(to: "henriquepjv@gmail.com", subject: "oi")
   end
 end

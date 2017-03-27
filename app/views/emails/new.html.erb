@@ -1,16 +1,19 @@
+<%= notice %>
+
 <h1>Contato</h1>
 
-<%= flash[:notice] %>
+<%= form_for @email, html: { multipart: true } do |f| %>
+  <dl>
 
-<%= form_tag emails_path, method: :post do %>
+    <dt><%= f.label :patient_id, "Usuária(o): #{@patient.name}" %></dt>
 
-  <%= label_tag :name,"Nome" %><br/>
-  <%= text_field_tag :name %> <br/>
-  <%= label_tag :speciality, "Especialidade" %><br/>
-  <%= text_field_tag :speciality %> <br/>
-  <%= label_tag :description, "Descrição" %> <br/>
-  <%= text_area_tag :description %> <br/>
+    <dt><%= f.label :description, "Descrição"%></dt>
+    <dt><%= f.text_area :description %><dt>
 
-  <%= submit_tag "Enviar" %>
+    <br>
+
+    <dt><%= f.submit 'Enviar' %></dt>
+
+  </dl>
 
 <% end %>
