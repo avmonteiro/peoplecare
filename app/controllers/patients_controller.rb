@@ -6,6 +6,7 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
   end
 
+
   def nearby
     @patients = Patient.where("region = ? AND looking_for = ?", current_professional.region, current_professional.speciality)
   end

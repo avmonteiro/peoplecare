@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
 
   resources :professionals, only: [:show]
+  resources :emails, only:[:new, :create, :update]
 end
