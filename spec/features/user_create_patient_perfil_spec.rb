@@ -3,13 +3,17 @@ require 'rails_helper'
 feature 'user create perfil' do
     scenario 'successfully' do
         # setup
+        region = Region.create(name: 'zona sul')
+
+        speciality = Speciality.create(name: 'fisioterapeuta')
+
         patient = Patient.new(photo: 'fotojpeg', name: 'Renan Guirado',
                               address: 'rua x apto 3, numero: 300', neighborhood: 'Ipiranga',
                               birthdate: '04/01/2001', genre: 'Masculino',
                               email: 'edson@peoplecare.com', password: 'xpt000000o', phone: '988759274',
-                              looking_for: 'fisioterapeuta especializado em choques faciais',
+                              speciality: speciality,
                               document: '07583849-0', profession: 'fisioterapeuta',
-                              talk_to: 'Maria', phone_contact: '977639621', region: 'zona norte')
+                              talk_to: 'Maria', phone_contact: '977639621', region: region)
 
         # visit new_patient_registration_path
         visit root_path
@@ -28,7 +32,7 @@ feature 'user create perfil' do
         fill_in 'Senha',                  with: patient.password, id: 'patient_password'
         fill_in 'Confirmação de Senha',   with: patient.password, id: 'patient_password_confirmation'
         fill_in 'patient_phone',          with: patient.phone
-        fill_in 'O que procuro?',         with: patient.looking_for
+        fill_in 'O que procuro?',         with: patient.speciality
         fill_in 'Documento',              with: patient.document
         fill_in 'Profissao',              with: patient.profession
         fill_in 'Falar com',              with: patient.talk_to

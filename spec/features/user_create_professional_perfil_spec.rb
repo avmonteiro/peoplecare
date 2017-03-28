@@ -2,11 +2,15 @@ require 'rails_helper'
 
 feature 'User create professional perfil' do
     scenario 'Successfully' do
-        professional = Professional.new(name: 'José', speciality: 'nutricionista', document: '413.555.321.77',
+        region = Region.create(name: 'zona sul')
+
+        speciality = Speciality.create(name: 'fisioterapeuta')
+
+        professional = Professional.new(name: 'José', speciality: speciality, document: '413.555.321.77',
                                         address: 'Rua numero dois', neighborhood: 'Santa Cecília',
                                         birthdate: '26/04/1992', genre: 'masculino', transport: 'carro',
                                         perimeter: '8 km', description: 'Possuo CRM número 233-4343-232, tenho 9 anos de experiencia na área',
-                                        photo: 'perfil.jpg', phone: '97475-3232', email: 'jose@hotmail.com', password: 'bahtata', region: 'zona norte')
+                                        photo: 'perfil.jpg', phone: '97475-3232', email: 'jose@hotmail.com', password: 'bahtata', region: region)
 
         visit root_path
 

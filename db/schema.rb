@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327134110) do
+ActiveRecord::Schema.define(version: 20170328004806) do
 
   create_table "emails", force: :cascade do |t|
     t.datetime "created_at",      null: false
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20170327134110) do
     t.string   "genre"
     t.string   "phone"
     t.string   "email"
-    t.string   "looking_for"
     t.string   "document"
     t.string   "profession"
     t.string   "talk_to"
@@ -47,14 +46,16 @@ ActiveRecord::Schema.define(version: 20170327134110) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "region"
+    t.integer  "speciality_id"
+    t.integer  "region_id"
     t.index ["email"], name: "index_patients_on_email", unique: true
+    t.index ["region_id"], name: "index_patients_on_region_id"
     t.index ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
+    t.index ["speciality_id"], name: "index_patients_on_speciality_id"
   end
 
   create_table "professionals", force: :cascade do |t|
     t.string   "name"
-    t.string   "speciality"
     t.string   "document"
     t.string   "neighborhood"
     t.string   "birthdate"
@@ -66,7 +67,6 @@ ActiveRecord::Schema.define(version: 20170327134110) do
     t.string   "email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "region"
     t.string   "genre"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -78,8 +78,24 @@ ActiveRecord::Schema.define(version: 20170327134110) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "address"
+    t.integer  "speciality_id"
+    t.integer  "region_id"
     t.index ["email"], name: "index_professionals_on_email", unique: true
+    t.index ["region_id"], name: "index_professionals_on_region_id"
     t.index ["reset_password_token"], name: "index_professionals_on_reset_password_token", unique: true
+    t.index ["speciality_id"], name: "index_professionals_on_speciality_id"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "specialities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -29,10 +29,10 @@
         <% @search_professional.each do |professional| %>
 
         <%= link_to professional.name, professional_path(professional) %>
-        <%= professional.speciality %>
+        <%= professional.speciality.name %>
         <%= professional.birthdate %>
         <%= professional.transport %>
-        <%= professional.region %>
+        <%= professional.region.name %>
 
         <% end %>
       <% end %>

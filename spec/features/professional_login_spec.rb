@@ -2,12 +2,16 @@ require 'rails_helper'
 
 feature 'User sign in' do
   scenario 'Successfully' do
-    professional = Professional.create(name: 'José', speciality: 'nutricionista', document: '413.555.321.77',
+    region = Region.create(name: 'zona sul')
+
+    speciality = Speciality.create(name: 'fisioterapeuta')
+
+    professional = Professional.create(name: 'José', speciality: speciality, document: '413.555.321.77',
                                     address: 'Rua numero dois', neighborhood: 'Santa Cecília',
                                     birthdate: '26/04/1992', genre: 'masculino', transport: 'carro',
                                     perimeter: '8 km', description: 'Possuo CRM número 233-4343-232, tenho 9 anos de experiencia na área',
                                     photo: 'perfil.jpg', phone: '97475-3232', email: 'jose@hotmail.com',
-                                    region: 'zona norte', password: 'bahtata')
+                                    region: region, password: 'bahtata')
 
   visit root_path
 
@@ -25,12 +29,16 @@ feature 'User sign in' do
   end
 
   scenario 'Professional insert invalid data' do
-    professional = Professional.create(name: 'José', speciality: 'nutricionista', document: '413.555.321.77',
+    region = Region.create(name: 'zona sul')
+
+    speciality = Speciality.create(name: 'fisioterapeuta')
+    
+    professional = Professional.create(name: 'José', speciality: speciality, document: '413.555.321.77',
                                     address: 'Rua numero dois', neighborhood: 'Santa Cecília',
                                     birthdate: '26/04/1992', genre: 'masculino', transport: 'carro',
                                     perimeter: '8 km', description: 'Possuo CRM número 233-4343-232, tenho 9 anos de experiencia na área',
                                     photo: 'perfil.jpg', phone: '97475-3232', email: 'jose@hotmail.com',
-                                    region: 'zona norte', password: 'bahtata')
+                                    region: region, password: 'bahtata')
 
   visit root_path
 
