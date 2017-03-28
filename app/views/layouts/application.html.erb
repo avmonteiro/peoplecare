@@ -9,34 +9,12 @@
   </head>
 
   <body>
-    <%= form_tag(root_path, action: "search", method: "get") do %>
-    <%= text_field_tag 'search', nil, placeholder: 'Ex: nutricionista...' %>
-    <%= submit_tag("Buscar") %>
-    <% end %>
-
-      <% if professional_signed_in? %>
-        Olá <%= current_professional.email %>
-        <%= link_to('Logout', destroy_professional_session_path, :method => :delete) %>
-        <%= link_to 'Pacientes Próximos', nearby_patients_path %>
-      <% end %>
-
-      <% if patient_signed_in? %>
-        Olá <%= current_patient.email %>
-        <%= link_to('Logout', destroy_patient_session_path, :method => :delete) %>
-      <% end %>
-
-      <% if @search_professional.present? %>
-        <% @search_professional.each do |professional| %>
-
-        <%= link_to professional.name, professional_path(professional) %>
-        <%= professional.speciality.name %>
-        <%= professional.birthdate %>
-        <%= professional.transport %>
-        <%= professional.region.name %>
-
-        <% end %>
-      <% end %>
-
-    <%= yield %>
+    <%= render 'menu' %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <footer>
+      <p>© 2017 - People Care</p>
+    </footer>
   </body>
 </html>
