@@ -1,5 +1,28 @@
-
-@import 'admin-forms';
-@import 'theme';
+@import "variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootswatch";
+
+
+header{
+  height: 100%;
+}
+
+html, body{
+  height: 100%;
+}
+
+body { padding-top: 70px; }
+
+footer{
+  margin-top: 100px;
+  background-color: #000066;
+  padding: 10px;
+  width: 100%;
+  position: relative;
+  color: white;
+}
+
+.grid-container{
+  margin-top: 100px;
+}

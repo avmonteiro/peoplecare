@@ -5,7 +5,7 @@ feature 'user visit home' do
 
     visit root_path
 
-    expect(page).to have_content 'Seja Bem Vindo ao PeopleCare!'
+    expect(page).to have_content 'Bem Vindo ao PeopleCare!'
 
   end
 end
