@@ -6,6 +6,11 @@ class PatientsController < ApplicationController
   end
 
 
+  def create
+    @regions = Region.all
+    @specialities = Speciality.all
+  end
+
   def nearby
     @patients = Patient.joins(:region).where("regions.name like ?", current_professional.region)
 

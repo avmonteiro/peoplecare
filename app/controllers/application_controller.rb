@@ -17,4 +17,9 @@ class ApplicationController < ActionController::Base
                      :profession, :talk_to, :phone_contact, :region_id])
      end
    end
+
+   def create
+     @regions = Region.all
+     @specialities = Speciality.all
+   end
 end
