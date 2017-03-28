@@ -23,6 +23,7 @@
       <% if patient_signed_in? %>
         Olá <%= current_patient.email %>
         <%= link_to('Logout', destroy_patient_session_path, :method => :delete) %>
+        <%= link_to 'Profissionais Próximos', nearby_professionals_path %>
       <% end %>
 
       <% if @search_professional.present? %>

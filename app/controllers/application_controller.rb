@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
 
    def configure_permitted_parameters
      if resource_class == Professional
-       devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :speciality, :document, :adress,
-                     :neighborhood, :region, :birthdate, :genre, :transport, :perimeter, :description,
+       devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :speciality, :document, :address,
+                     :neighborhood, :email, :region, :birthdate, :genre, :transport, :perimeter, :description,
                      :photo, :phone])
      end
 

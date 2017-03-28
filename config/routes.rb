@@ -7,15 +7,17 @@ Rails.application.routes.draw do
   resources :patients, only: [:show] do
     collection do
       get 'nearby'
+      get 'search'
     end
   end
 
-  resources :professionals, only: [:show]
-
-  resources :emails, only:[:new, :create, :update, :show] do
+  resources :professionals, only: [:show] do
     collection do
-      get 'prof_email'
+      get 'nearby'
+      get 'search'
     end
   end
+
+  resources :emails, only:[:new, :create, :update, :show]
 
 end

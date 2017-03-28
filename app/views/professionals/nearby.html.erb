@@ -1,0 +1,13 @@
+<% @professionals.each do |professional| %>
+
+<dt>
+  <dl><%= professional.name %></dl>
+  <dd><%= professional.address %></dd>
+  <dd><%= professional.region %></dd>
+  <dd><%= professional.email %></dd>
+  <dd><%= professional.speciality %></dd>
+  <dd><%= link_to 'Enviar email', new_email_path(:professional => professional.id) %></dd>
+  <dd><%= mail_to professional.email, "Enviar mensagem", cc: current_patient.email, subject: "contato" %></dd>
+</dt>
+
+<% end %>
