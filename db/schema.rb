@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20170327134110) do
     t.string   "phone_contact"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "region"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -48,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170327134110) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "region"
     t.index ["email"], name: "index_patients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
   end
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20170327134110) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "region"
+    t.string   "genre"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -76,7 +77,6 @@ ActiveRecord::Schema.define(version: 20170327134110) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "genre"
     t.string   "address"
     t.index ["email"], name: "index_professionals_on_email", unique: true
     t.index ["reset_password_token"], name: "index_professionals_on_reset_password_token", unique: true
