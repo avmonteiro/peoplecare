@@ -15,15 +15,14 @@ feature 'User search professional by region' do
 
     visit root_path
 
-    fill_in 'search', with: professional.region
+    fill_in 'search', with: professional.region.name
 
     click_on 'Buscar'
 
     expect(page).to have_content professional.name
-    expect(page).to have_content professional.speciality
-    expect(page).to have_content professional.birthdate
+    expect(page).to have_content professional.speciality.name
     expect(page).to have_content professional.transport
-    expect(page).to have_content professional.region
+    expect(page).to have_content professional.region.name
 
   end
 end

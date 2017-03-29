@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 20170328004806) do
     t.string   "email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "genre"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -77,6 +76,7 @@ ActiveRecord::Schema.define(version: 20170328004806) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "genre"
     t.string   "address"
     t.integer  "speciality_id"
     t.integer  "region_id"

@@ -8,14 +8,13 @@
     <%= f.input :photo, label: 'Foto' %>
     <%= f.input :address, label: 'Endereco' %>
     <%= f.input :neighborhood, label: 'Bairro' %>
-    <%= f.input :region, label: 'Região' %>
     <%= f.association :region, collection: @regions, priority: @patient.region_id %>
     <%= f.association :speciality, collection: @specialities, priority: @patient.speciality_id %>
     <%= f.input :birthdate, label: 'Data de Nascimento' %>
     <%= f.input :genre, label: 'Sexo' %>
     <%= f.input :phone, label: 'Telefone' %>
     <%= f.input :document, label: 'Documento' %>
-    <%= f.input :profession, label: 'Profissao' %>
+    <%= f.input :profession, label: 'Profissão' %>
     <%= f.input :talk_to, label: 'Falar com' %>
     <%= f.input :phone_contact, label: 'Telefone do Contato' %>
     <h3>Email e Senha</h3>
