@@ -2,8 +2,13 @@ pt-BR:
   activerecord:
     models:
       professional: Profissional
+      patient: Paciente
     attributes:
       professional:
+        speciality: "Especialidade"
+        genre: 'Gênero'
+        region: 'Região'
+      patient:
         speciality: "Especialidade"
         genre: 'Gênero'
         region: 'Região'

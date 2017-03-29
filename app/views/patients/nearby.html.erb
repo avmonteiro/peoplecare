@@ -1,12 +1,19 @@
 <% @patients.each do |patient| %>
 
-<dt>
-  <dl><%= patient.name %></dl>
-  <dd><%= patient.address %></dd>
-  <dd><%= patient.region.name %></dd>
-  <dd><%= patient.email %></dd>
-  <dd><%= link_to 'Enviar email', new_email_path(:patient => patient.id) %></dd>
-  <dd><%= mail_to patient.email, "Enviar mensagem", cc: current_professional.email, subject: "working" %></dd>
-</dt>
-
+<div class="grid-container">
+  <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= patient.name %></h3>
+      </div>
+      <div class="panel-body">
+        <p><%= patient.address %></p>
+        <p><%= patient.region.name %></p>
+        <p><%= patient.email %></p>
+        <p><%= mail_to patient.email, "Enviar Email", cc: current_professional.email, subject: "working" %></p>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>
+</div>

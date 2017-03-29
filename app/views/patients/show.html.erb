@@ -1,14 +1,24 @@
-<%= @patient.name %>
-<%= @patient.photo %>
-<%= @patient.address %>
-<%= @patient.neighborhood %>
-<%= @patient.region %>
-<%= @patient.birthdate %>
-<%= @patient.genre %>
-<%= @patient.phone %>
-<%= @patient.email %>
-<%= @patient.looking_for %>
-<%= @patient.document %>
-<%= @patient.profession %>
-<%= @patient.talk_to %>
-<%= @patient.phone_contact %>
+<div class="grid-container">
+  <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= @patient.name %></h3>
+      </div>
+      <div class="panel-body">
+        <strong><p>Foto cadastrada: </strong><%= @patient.photo %></p>
+        <strong><p>Endereço: </strong><%= @patient.address %></p>
+        <strong><p>Bairro: </strong><%= @patient.neighborhood %></p>
+        <strong><p>Região: </strong><%= @patient.region.name %></p>
+        <strong><p>Data de aniversário: </strong><%= @patient.birthdate %></p>
+        <strong><p>Gênero: </strong><%= @patient.genre %></p>
+        <strong><p>Telefone: </strong><%= @patient.phone %></p>
+        <strong><p>Email: </strong><%= @patient.email %></p>
+        <strong><p>Procurando: </strong><%= @patient.speciality.name %></p>
+        <strong><p>CPF: </strong><%= @patient.document %></p>
+        <strong><p>Profissão do paciente: </strong><%= @patient.profession %></p>
+        <strong><p>Responsável: </strong><%= @patient.talk_to %></p>
+        <strong><p>Telefone do Responsável: </strong><%= @patient.phone_contact %></p>
+      </div>
+    </div>
+  </div>
+</div>

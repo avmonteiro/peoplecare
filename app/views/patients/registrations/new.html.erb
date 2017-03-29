@@ -1,31 +1,94 @@
-<h2>Sign up</h2>
+<div class="row">
+  <h2>Cadastro de Pacientes</h2>
+</div>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name, label: 'Nome Completo' %>
-    <%= f.input :photo, label: 'Foto' %>
-    <%= f.input :address, label: 'Endereco' %>
-    <%= f.input :neighborhood, label: 'Bairro' %>
-    <%= f.association :region, label: 'Região' %>
-    <%= f.association :speciality, label: 'Especialidade' %>
-    <%= f.input :birthdate, label: 'Data de Nascimento' %>
-    <%= f.input :genre, label: 'Sexo' %>
-    <%= f.input :phone, label: 'Telefone' %>
-    <%= f.input :document, label: 'Documento' %>
-    <%= f.input :profession, label: 'Profissão' %>
-    <%= f.input :talk_to, label: 'Falar com' %>
-    <%= f.input :phone_contact, label: 'Telefone do Contato' %>
+<div class="panel">
+  <div class="form-inputs panel-body bg-light p25 pb15">
+
+    <div class="section row">
+      <div class="col-md-5">
+        <%= f.input :name, label: 'Nome Completo', placeholder:'Inserir Nome...' %>
+      </div>
+      <div class="col-md-5">
+        <%= f.input :photo, label: 'Foto', placeholder: 'Foto' %>
+      </div>
+    </div>
+
+    <div class="section row">
+      <div class="col-md-5">
+        <%= f.input :address, label: 'Endereco', placeholder: 'Endereço da residência' %>
+      </div>
+      <div class="col-md-5">
+        <%= f.input :neighborhood, label: 'Bairro', placeholder: 'Bairro' %>
+      </div>
+    </div>
+
+    <div class="section row">
+      <div class="col-md-5">
+        <%= f.association :region, label: 'Região' %>
+      </div>
+      <div class="col-md-5">
+        <%= f.association :speciality, label: 'Especialidade' %>
+      </div>
+    </div>
+
+    <div class="section row">
+      <div class="col-md-5">
+        <%= f.input :birthdate, label: 'Data de Nascimento', placeholder: 'DD/MM/AAAA' %>
+      </div>
+      <div class="col-md-5">
+        <%= f.input :genre, collection: ['Masculino', 'Feminino'], include_blank: false %>
+      </div>
+    </div>
+
+    <div class="section row">
+      <div class="col-md-5">
+        <%= f.input :phone, label: 'Telefone', placeholder: 'Telefone' %>
+      </div>
+      <div class="col-md-5">
+        <%= f.input :document, label: 'Documento', placeholder: 'CPF' %>
+      </div>
+    </div>
+
+    <div class="section row">
+      <div class="col-md-5">
+        <%= f.input :profession, label: 'Profissão', placeholder: 'Sua profissão' %>
+      </div>
+      <div class="col-md-5">
+        <%= f.input :talk_to, label: 'Falar com', placeholder: 'Responsável por você' %>
+      </div>
+    </div>
+
+    <div class="section row">
+      <div class="col-md-5">
+          <%= f.input :phone_contact, label: 'Telefone do Contato', placeholder: 'Telefone do seu responsável' %>
+      </div>
+    </div>
+
+    <hr class="alt mt40 mb30 mh70">
+
     <h3>Email e Senha</h3>
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, label:'Senha', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, label: 'Confirmação de Senha', required: true %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Cadastrar Paciente" %>
-  </div>
-<% end %>
+    <div class="section row">
+      <div class="col-md-4">
+        <%= f.input :email, required: true, autofocus: true %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :password, label:'Senha', required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :password_confirmation, label: 'Confirmação de Senha', required: true %>
+      </div>
+    </div>
 
-<%= render "patients/shared/links" %>
+    <hr class="alt mt40 mb30 mh70">
+
+    <div class="form-actions">
+      <%= f.button :submit, "Cadastrar Paciente", class: "btn btn-info" %>
+    </div>
+    <% end %>
+  </div>
+</div>

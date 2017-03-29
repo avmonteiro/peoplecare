@@ -27,7 +27,7 @@ feature 'user create perfil' do
         fill_in 'Bairro',                 with: patient.neighborhood
         select region.name, from: 'Região'
         fill_in 'Data de Nascimento',     with: patient.birthdate
-        fill_in 'Sexo',                   with: patient.genre
+        select  'Masculino', from: 'Gênero'
         fill_in 'Email',                  with: patient.email
         fill_in 'Senha',                  with: patient.password, id: 'patient_password'
         fill_in 'Confirmação de Senha',   with: patient.password, id: 'patient_password_confirmation'

@@ -1,13 +1,20 @@
 <% @professionals.each do |professional| %>
 
-<dt>
-  <dl><%= professional.name %></dl>
-  <dd><%= professional.address %></dd>
-  <dd><%= professional.region.name %></dd>
-  <dd><%= professional.email %></dd>
-  <dd><%= professional.speciality.name %></dd>
-  <dd><%= link_to 'Enviar email', new_email_path(:professional => professional.id) %></dd>
-  <dd><%= mail_to professional.email, "Enviar mensagem", cc: current_patient.email, subject: "contato" %></dd>
-</dt>
-
+<div class="grid-container">
+  <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= professional.name %></h3>
+      </div>
+      <div class="panel-body">
+        <h4><%= professional.speciality.name %></h4>
+        <p><%= professional.address %></p></p>
+        <p><%= professional.region.name %></p>
+        <p><%= professional.email %></p>
+        <p><%= mail_to professional.email, "Enviar email", cc: current_patient.email, subject: "contato" %></p>
+      </div>
+    </div>
+  </div>
 <% end %>
+</div>
+</div>
