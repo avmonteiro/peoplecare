@@ -20,14 +20,16 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if professional_signed_in? %>
-          <li>Olá <%= current_professional.email%></li>
+
+          <li class="navbar-text">Olá <%= current_professional.email%></li>
+
           <li><%= link_to 'Pacientes Próximos', nearby_patients_path, class: 'btn btn-info navbar-btn' %></li>
           <li><%= link_to 'Logout', destroy_professional_session_path, :method => :delete, class: 'btn btn-info navbar-btn' %></li>
 
         <% end %>
 
         <% if patient_signed_in? %>
-            <li>Olá <%= current_patient.email %></li>
+            <li class="navbar-text">Olá <%= current_patient.email %></li>
             <li><%= link_to 'Profissionais Próximos', nearby_professionals_path, class: 'btn btn-info navbar-btn' %></li>
             <li><%= link_to 'Logout', destroy_patient_session_path, :method => :delete, class: 'btn btn-info navbar-btn' %></li>
         <% end %>
