@@ -8,76 +8,67 @@
 
   <div class="panel">
       <div class="form-inputs panel-body bg-light p25 pb15">
-
-        <div class="section row">
+        <div class=" row">
           <div class="col-md-6">
             <%= f.input :name, label: 'Nome', placeholder:'Inserir Nome...'%>
           </div>
-
           <div class="col-md-6">
             <%= f.input :document, label: 'CPF', placeholder:'Inserir CPF...' %>
           </div>
         </div>
 
-        <div class="section row">
+        <div class=" row">
           <div class="col-md-6">
             <%= f.association :speciality %>
           </div>
-
           <div class="col-md-6">
             <%= f.input :address, label: 'Endereço de atendimento', placeholder:'Endereço de atendimento' %>
           </div>
         </div>
 
-        <div class="section row">
+        <div class=" row">
           <div class="col-md-6">
             <%= f.input :neighborhood, label: 'Bairro', placeholder:'Bairro' %>
           </div>
-
           <div class="col-md-6">
             <%= f.association :region %>
           </div>
         </div>
 
-        <div class="section row">
+        <div class="row">
           <div class="col-md-6">
             <%= f.input :birthdate, label: 'Data de Nascimento', placeholder:'DD/MM/AAAA' %>
           </div>
-
           <div class="col-md-6">
             <%= f.input :genre, collection: ['Masculino', 'Feminino'], include_blank: false %>
           </div>
         </div>
 
-        <div class="section row">
+        <div class="row">
           <div class="col-md-6">
             <%= f.input :transport, label: 'Meio de locomoção', placeholder:'Meio de locomoção' %>
           </div>
-
           <div class="col-md-6">
             <%= f.input :perimeter, label: 'Perímetro de atendimento', placeholder:'Perímetro de atendimento' %>
           </div>
         </div>
 
-        <div class="section row">
-
+        <div class="row">
           <div class="col-md-6">
             <%= f.input :phone, label: 'Telefone', placeholder:'Telefone' %>
           </div>
-
           <div class="col-md-6">
             <%= f.input :photo, label: 'Foto', placeholder: 'Foto' %>
           </div>
         </div>
-        <!-- end section -->
-        <div class="section row">
+
+        <div class="row">
           <%= f.input :description, label: 'Descrição', placeholder:'Descrição' %>
         </div>
-        <!--  Divider -->
+
         <hr class="alt mt40 mb30 mh70">
 
-        <div class="section row">
-
+        <div class="row">
           <div class="col-md-4">
             <%= f.input :email, required: true %>
           </div>
@@ -92,10 +83,8 @@
 
         </div>
       </div>
-    </div>
-
-    <div class="panel-footer clearfix form-action" >
       <%= f.button :submit, "Cadastrar", class: "btn btn-info"%>
+    </div>
 
     </div>
   <% end %>

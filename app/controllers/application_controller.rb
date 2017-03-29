@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protected
 
    def configure_permitted_parameters
-     
+
      if resource_class == Professional
        devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :speciality_id, :document, :adress,
                      :neighborhood, :region_id, :birthdate, :genre, :transport, :perimeter, :description,
@@ -19,8 +19,4 @@ class ApplicationController < ActionController::Base
      end
    end
 
-   def create
-     @regions = Region.all
-     @specialities = Speciality.all
-   end
 end
