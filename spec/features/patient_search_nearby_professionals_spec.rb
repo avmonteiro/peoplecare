@@ -10,7 +10,7 @@ feature 'Patient search for professionals by medical treatment and region' do
     patient = Patient.create(photo: 'fotojpeg', name: 'Renan Guirado',
                             address: 'rua x apto 3, numero 300', neighborhood: 'Ipiranga',
                             birthdate: '04/01/2001', genre: 'Masculino',
-                            phone: '988759274', email: 'zezinho@email.com',
+                            phone: '988759274', email: 'zezinho@email.com', speciality: speciality,
                             document: '07583849-0', profession: 'advogado', password: '123456',
                             talk_to: 'Maria', phone_contact: '977639621', region: region)
 
