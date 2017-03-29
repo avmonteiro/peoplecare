@@ -15,14 +15,18 @@ html, body{
 body { padding-top: 70px; }
 
 footer{
-  margin-top: 100px;
+  position:absolute;
+  bottom:0;
   background-color: #000066;
   padding: 10px;
   width: 100%;
-  position: relative;
   color: white;
 }
 
 .grid-container{
   margin-top: 100px;
+}
+
+.userlogged{
+  color: white;
 }
