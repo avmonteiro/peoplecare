@@ -19,18 +19,12 @@ class EmailsController < ApplicationController
       @foods = Food.all
       @cookeries = Cookery.all
       render :new
-  end
-    #@patient = Patient.all
-    #@patient = Patient.find(params[:patient]
-    #ProfessionalMailer.new_professional_contact(@patient).deliver_now
-    #flash[:notice] = "formulário enviado"
-    #redirect_to root_path
+    end
   end
 
   def show
-    #@patients = Patient.where("region = ? AND looking_for = ?", current_professional.region, current_professional.speciality)
-  end
 
+  end
 
   private
 
