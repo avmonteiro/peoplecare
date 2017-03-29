@@ -12,8 +12,7 @@ class PatientsController < ApplicationController
   end
 
   def nearby
-    @patients = Patient.joins(:region).where("regions.name like ?", current_professional.region)
-
+    @patients = Patient.joins(:region).where("regions.name like ?", current_professional.region.name)
 
   end
 

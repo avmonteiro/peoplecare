@@ -3,7 +3,7 @@
 <dt>
   <dl><%= patient.name %></dl>
   <dd><%= patient.address %></dd>
-  <dd><%= patient.region %></dd>
+  <dd><%= patient.region.name %></dd>
   <dd><%= patient.email %></dd>
   <dd><%= link_to 'Enviar email', new_email_path(:patient => patient.id) %></dd>
   <dd><%= mail_to patient.email, "Enviar mensagem", cc: current_professional.email, subject: "working" %></dd>
