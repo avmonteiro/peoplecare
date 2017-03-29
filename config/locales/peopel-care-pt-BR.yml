@@ -5,4 +5,5 @@ pt-BR:
     attributes:
       professional:
         speciality: "Especialidade"
-        genre: 'Genêro'
+        genre: 'Gênero'
+        region: 'Região'

@@ -19,13 +19,13 @@ feature 'User create professional perfil' do
         click_on 'Ainda não possuo cadastro'
 
         fill_in 'Nome', with: professional.name
-        fill_in 'Especialidade', with: professional.speciality
+        select speciality.name, from: 'Especialidade'
         fill_in 'CPF', with: professional.document
         fill_in 'Endereço de atendimento', with: professional.address
         fill_in 'Bairro', with: professional.neighborhood
-        fill_in 'Região', with: professional.region
+        select region.name, from: 'Região'
         fill_in 'Data de Nascimento', with: professional.birthdate
-        fill_in 'Sexo', with: professional.genre
+        select  'Masculino', from: 'Gênero'
         fill_in 'Meio de locomoção', with: professional.transport
         fill_in 'Perímetro de atendimento', with: professional.perimeter
         fill_in 'Descrição', with: professional.description
@@ -40,6 +40,7 @@ feature 'User create professional perfil' do
         expect(current_path).to eq(root_path)
         expect(page).to have_content("Olá #{professional.email}")
     end
+    
     scenario 'Should fill all fields' do
         visit root_path
 

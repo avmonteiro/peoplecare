@@ -25,7 +25,7 @@ feature 'user create perfil' do
         fill_in 'Foto',                   with: patient.photo
         fill_in 'Endereco',               with: patient.address
         fill_in 'Bairro',                 with: patient.neighborhood
-        fill_in 'Região',                 with: patient.region
+        select region.name, from: 'Região'
         fill_in 'Data de Nascimento',     with: patient.birthdate
         fill_in 'Sexo',                   with: patient.genre
         fill_in 'Email',                  with: patient.email
@@ -33,7 +33,6 @@ feature 'user create perfil' do
         fill_in 'Confirmação de Senha',   with: patient.password, id: 'patient_password_confirmation'
         fill_in 'patient_phone',          with: patient.phone
         select speciality.name, from: 'Especialidade'
-        fill_in 'O que procuro?',         with: patient.speciality
         fill_in 'Documento',              with: patient.document
         fill_in 'Profissão',              with: patient.profession
         fill_in 'Falar com',              with: patient.talk_to

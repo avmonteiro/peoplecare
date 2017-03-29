@@ -46,15 +46,7 @@ feature "User view professional profile" do
 
     expect(page).to have_content professional.name
     expect(page).to have_content professional.speciality.name
-    expect(page).to have_content professional.address
-    expect(page).to have_content professional.neighborhood
-    expect(page).to have_content professional.birthdate
-    expect(page).to have_content professional.genre
     expect(page).to have_content professional.transport
-    expect(page).to have_content professional.perimeter
-    expect(page).to have_content professional.description
-    expect(page).to have_content professional.phone
-    expect(page).to have_content professional.email
     expect(page).to have_content professional.region.name
 
   end

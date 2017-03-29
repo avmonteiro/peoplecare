@@ -8,8 +8,8 @@
     <%= f.input :photo, label: 'Foto' %>
     <%= f.input :address, label: 'Endereco' %>
     <%= f.input :neighborhood, label: 'Bairro' %>
-    <%= f.association :region, collection: @regions, priority: @patient.region_id %>
-    <%= f.association :speciality, collection: @specialities, priority: @patient.speciality_id %>
+    <%= f.association :region, label: 'Região' %>
+    <%= f.association :speciality, label: 'Especialidade' %>
     <%= f.input :birthdate, label: 'Data de Nascimento' %>
     <%= f.input :genre, label: 'Sexo' %>
     <%= f.input :phone, label: 'Telefone' %>
