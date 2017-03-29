@@ -5,7 +5,6 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
   end
 
-
   def create
     @regions = Region.all
     @specialities = Speciality.all
